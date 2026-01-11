@@ -1,0 +1,86 @@
+[
+  {
+    "id": "PKG-BMW",
+    "packageName": "BMW M-Performance Care",
+    "price": "₹25000",
+    "servicesIncluded": [
+      "Full Engine Scan",
+      "Synthetic Oil Change",
+      "Brake Pad Replacement",
+      "Ceramic Coating"
+    ],
+    "validity": "24 months",
+    "status": "Available",
+    "imageUrl": "https://wallpapers.com/images/high/cool-grey-audi-r8-g51eyz8fxgp3h8qn.webp"
+  },
+  {
+    "id": "PKG-1",
+    "packageName": "Basic Service",
+    "price": "₹3500",
+    "servicesIncluded": [
+      "Oil Change",
+      "Washing",
+      "Brake Inspection",
+      "Filter Check"
+    ],
+    "validity": "6 months",
+    "status": "Available",
+    "imageUrl": "https://www.turbo.fr/sites/default/files/styles/header_image/public/migration/newscast/field_image/000000008490994.jpg.webp?itok=D-xjriuG"
+  },
+  {
+    "id": "PKG-2",
+    "packageName": "Hyundai Creta Care",
+    "price": "₹5500",
+    "servicesIncluded": [
+      "Oil Change",
+      "Wheel Alignment",
+      "AC Checkup",
+      "Body Polish"
+    ],
+    "validity": "9 months",
+    "status": "Available",
+    "imageUrl": "https://www.turbo.fr/sites/default/files/styles/slideshow_images/public/slideshow/slides/2024-08/66c304c4bc358.jpg?itok=dnTSBLIx"
+  },
+  {
+    "id": "PKG-3",
+    "packageName": "Mahindra Thar Edition",
+    "price": "₹8000",
+    "servicesIncluded": [
+      "Off-road Inspection",
+      "Synthetic Oil",
+      "Underbody Cleaning",
+      "4x4 Check"
+    ],
+    "validity": "12 months",
+    "status": "Available",
+    "imageUrl": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "PKG-4",
+    "packageName": "XUV 700 Premium",
+    "price": "₹12000",
+    "servicesIncluded": [
+      "ADAS Calibration Check",
+      "Full Detailing",
+      "Engine Tuning",
+      "Sensor Mapping"
+    ],
+    "validity": "18 months",
+    "status": "Available",
+    "imageUrl": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "PKG-5",
+    "packageName": "Toyota Fortuner Legend",
+    "price": "₹18000",
+    "servicesIncluded": [
+      "Heavy Duty Service",
+      "Ceramic Wax",
+      "Interior Deep Clean",
+      "Chassis Lubrication"
+    ],
+    "validity": "24 months",
+    "status": "Available",
+    "imageUrl": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Fortuner-Legender/10229/1764935522846/front-left-side-47.jpg?tr=w-664"
+  }
+]
