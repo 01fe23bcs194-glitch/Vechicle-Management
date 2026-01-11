@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
-import { API_URL } from '../config';
+import { API_URL } from './config';
 import PackageList from './components/PackageList';
 import BookingForm from './components/BookingForm';
 import AdminDashboard from './pages/AdminDashboard';
