@@ -62,7 +62,7 @@ const LoginPage = ({ onSwitch }) => {
                     <div className="field">
                         <label>{isAdmin ? 'Admin ID' : 'Account Email'}</label>
                         <input
-                            type={isAdmin ? 'text' : 'email'}
+                            type="text"
                             name="email"
                             required
                             placeholder={isAdmin ? 'admin123' : 'name@example.com'}

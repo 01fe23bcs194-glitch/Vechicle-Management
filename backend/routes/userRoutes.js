@@ -67,12 +67,12 @@ router.post('/login', async (req, res) => {
         }
 
         // Hardcoded Logins for Quick Testing
-        if (email === 'admin123' && password === 'admin@12345') {
-            const adminUser = { id: 'ADMIN-SITE', name: 'System Administrator', email: 'admin123', role: 'admin' };
+        if (email === 'admin' && password === 'admin123') {
+            const adminUser = { id: 'ADMIN-SITE', name: 'System Administrator', email: 'admin', role: 'admin' };
             return res.status(200).json({ success: true, token: signToken(adminUser.id), user: adminUser });
         }
-        if (email === 'user123' && password === '123456') {
-            const defaultUser = { id: 'USER-SITE', name: 'Standard User', email: 'user123', role: 'user' };
+        if (email === 'user' && password === 'user123') {
+            const defaultUser = { id: 'USER-SITE', name: 'Standard User', email: 'user', role: 'user' };
             return res.status(200).json({ success: true, token: signToken(defaultUser.id), user: defaultUser });
         }
 

@@ -120,7 +120,10 @@ app.use((req, res, next) => {
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: '*', // Allow all origins for easier deployment troubleshooting
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -134,8 +137,9 @@ app.get('/', (req, res) => {
     const isDB = app.get('dbConnected');
     res.status(200).json({
         success: true,
-        message: `Welcome to Keep Hubli Cars Service API (${isDB ? 'MongoDB' : 'JSON Store'})`,
-        frontendUrl: 'http://localhost:5173'
+        message: `Welcome to Keep Hubli Cars Service API (${isDB ? 'MongoDB Connected' : 'JSON Store Mode'})`,
+        status: 'running',
+        timestamp: new Date().toISOString()
     });
 });
 
