@@ -9,6 +9,7 @@ import bookingRoutes from './routes/bookingRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import packageRoutes from './routes/packageRoutes.js';
 import { readData, writeData } from './utils/jsonStore.js';
+import ServicePackage from './models/servicePackageSchema.js';
 
 dotenv.config();
 
@@ -21,10 +22,22 @@ const PORT = process.env.PORT || 5000;
 // Connect to MongoDB
 let dbConnected = false;
 mongoose.connect(process.env.MONGODB_URI)
-    .then(() => {
+    .then(async () => {
         console.log('✅ MongoDB connected successfully');
         dbConnected = true;
         app.set('dbConnected', true);
+
+        // Auto-seed if empty
+        try {
+            const count = await ServicePackage.countDocuments();
+            if (count === 0) {
+                console.log('📦 Seeding initial packages to MongoDB...');
+                await ServicePackage.insertMany(initialPackages);
+                console.log('✅ Seeding complete');
+            }
+        } catch (err) {
+            console.error('⚠️ Seeding failed:', err.message);
+        }
     })
     .catch((err) => {
         console.log('⚠️ MongoDB connection error (using JSON storage):', err.message);
