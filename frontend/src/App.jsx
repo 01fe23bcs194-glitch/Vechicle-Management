@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
+import { API_URL } from '../config';
 import PackageList from './components/PackageList';
 import BookingForm from './components/BookingForm';
 import AdminDashboard from './pages/AdminDashboard';
@@ -21,7 +22,7 @@ function App() {
   const fetchPackages = async () => {
     try {
       setPackagesLoading(true);
-      const response = await fetch('http://localhost:5000/api/packages');
+      const response = await fetch(`${API_URL}/api/packages`);
       const data = await response.json();
       if (data.success) {
         setPackages(data.packages);
@@ -68,7 +69,7 @@ function App() {
   const handleBookingSubmit = async (bookingData) => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/bookService', {
+      const response = await fetch(`${API_URL}/api/bookService`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { API_URL } from '../config';
 
 const MyBookingsPage = () => {
     const { user } = useAuth();
@@ -15,7 +16,7 @@ const MyBookingsPage = () => {
     const fetchMyBookings = async () => {
         try {
             setLoading(true);
-            const res = await fetch('http://localhost:5000/api/my-bookings', {
+            const res = await fetch(`${API_URL}/api/my-bookings`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();

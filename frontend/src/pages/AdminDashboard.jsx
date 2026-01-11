@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { API_URL } from '../config';
 
 const AdminDashboard = ({ packages, onUpdate, onDelete, onAdd }) => {
     const { user } = useAuth();
@@ -26,7 +27,7 @@ const AdminDashboard = ({ packages, onUpdate, onDelete, onAdd }) => {
 
     const fetchBookings = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/bookings', {
+            const res = await fetch(`${API_URL}/api/bookings`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await res.json();
@@ -46,8 +47,8 @@ const AdminDashboard = ({ packages, onUpdate, onDelete, onAdd }) => {
 
             const pkgData = { ...newPkg, servicesIncluded: servicesArray };
             const url = editingPkgId
-                ? `http://localhost:5000/api/packages/${editingPkgId}`
-                : 'http://localhost:5000/api/packages';
+                ? `${API_URL}/api/packages/${editingPkgId}`
+                : `${API_URL}/api/packages`;
 
             const method = editingPkgId ? 'PUT' : 'POST';
 
@@ -98,7 +99,7 @@ const AdminDashboard = ({ packages, onUpdate, onDelete, onAdd }) => {
     const deletePackage = async (id) => {
         if (!window.confirm('Are you sure you want to delete this package?')) return;
         try {
-            const res = await fetch(`http://localhost:5000/api/packages/${id}`, {
+            const res = await fetch(`${API_URL}/api/packages/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

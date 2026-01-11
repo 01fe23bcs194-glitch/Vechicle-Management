@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { API_URL } from '../config';
 
 const RegisterPage = ({ onSwitch }) => {
     const { login } = useAuth();
@@ -17,7 +18,7 @@ const RegisterPage = ({ onSwitch }) => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:5000/api/users/register', {
+            const response = await fetch(`${API_URL}/api/users/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
